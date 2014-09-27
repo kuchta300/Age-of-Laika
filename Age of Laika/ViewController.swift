@@ -24,13 +24,22 @@ class ViewController: UIViewController {
     }
 
     @IBAction func ConvertButtonLabel(sender: UIButton) {
-        
+        var dogYearsInDouble:Double = 0.0
         let conversionConstant = 7
+        let humanYearsFromTextField = Double ((humanYearsLabel.text as NSString).doubleValue)
         let humanYearsInString  = humanYearsLabel.text
         let humanYearsInInt = humanYearsInString.toInt()
-        let dogYearsInInt = humanYearsInInt! * 7
         
-        dogYearsLabel.text = "\(dogYearsInInt)" + " Dog Years"
+        if humanYearsInInt <= 2{
+            dogYearsInDouble = humanYearsFromTextField * 10.5
+        }
+        else
+        {
+        dogYearsInDouble = 21 + ((humanYearsFromTextField-2) * 4)
+        }
+        
+        
+        dogYearsLabel.text = "\(dogYearsInDouble)" + " Dog Years"
         
         
     }
