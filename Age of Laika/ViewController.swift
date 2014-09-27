@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var humanYearsLabel: UITextField!
+    
+    @IBOutlet weak var dogYearsLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +23,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func ConvertButtonLabel(sender: UIButton) {
+        
+        let conversionConstant = 7
+        let humanYearsInString  = humanYearsLabel.text
+        let humanYearsInInt = humanYearsInString.toInt()
+        let dogYearsInInt = humanYearsInInt! * 7
+        
+        dogYearsLabel.text = "\(dogYearsInInt)" + " Dog Years"
+        
+        
+    }
 
 }
 
